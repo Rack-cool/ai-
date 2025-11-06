@@ -1,12 +1,12 @@
-import requests
+import requests     #用于发送HTTP请求
 import json
 # 设置请求的地址
-url = "https://api.siliconflow.cn/v1/chat/completions"
+url = "https://api.siliconflow.cn/v1/chat/completions"     #设置API的完整端点url
 
-# 设置请求头，包含授权信息
+# 定义请求数据
 data = {
-    "model": "Qwen/Qwen2.5-7B-Instruct",
-    "messages": [
+    "model": "Qwen/Qwen2.5-7B-Instruct",     #指定模型
+    "messages": [              #对话消息列表
         {
             "role": "system",
             "content": "你是一个卖萌的助手"
@@ -20,9 +20,12 @@ data = {
     # 流式输出
     "stream":True
 }
+
+#设置请求头
 headers = {
     # api密钥
     "Authorization": "Bearer sk-keluyynkrgpraneyqclrzkcaychsplskqduzljsfykkaqwba",
+    #指定请求数据为json格式
     "Content-Type": "application/json"
 }
 
